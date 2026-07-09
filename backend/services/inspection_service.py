@@ -16,7 +16,8 @@ from schemas import InspectionParameters
 
 BASE_DIR = Path(__file__).resolve().parents[2]
 BACKEND_DIR = Path(__file__).resolve().parents[1]
-DATASET_DIR = BASE_DIR / "dataset"
+# Dataset is bundled inside backend/ for deployment
+DATASET_DIR = BACKEND_DIR / "dataset"
 OUTPUT_DIR = BACKEND_DIR / "outputs"
 DB_PATH = BACKEND_DIR / "inspection_history.sqlite3"
 ALLOWED_EXTENSIONS = {".jpg", ".jpeg", ".png", ".bmp", ".tiff", ".tif", ".webp"}

@@ -1,10 +1,41 @@
+# Python
 __pycache__/
-*.pyc
-.venv/
-venv/
-backend/inspection_history.sqlite3
-backend/outputs/*/
-frontend/node_modules/
-frontend/dist/
-.env
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
 
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Database (ephemeral — regenerated at runtime)
+backend/inspection_history.sqlite3
+
+# Output images (ephemeral)
+backend/outputs/*
+!backend/outputs/.gitkeep
+
+# Node
+node_modules/
+frontend/dist/
+frontend/.env.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Old Streamlit app (kept for reference, not deployed)
+Vision Inspect AI/__pycache__/

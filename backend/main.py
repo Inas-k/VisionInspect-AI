@@ -1,4 +1,5 @@
 from pathlib import Path
+import os
 
 import cv2
 from fastapi import FastAPI, File, Form, HTTPException, UploadFile
@@ -21,9 +22,16 @@ from services.inspection_service import (
 
 app = FastAPI(title="VisionInspect AI API", version="2.0")
 
+# Allow origins from env var (comma-separated) or fall back to localhost dev
+_raw_origins = os.environ.get(
+    "ALLOWED_ORIGINS",
+    "http://localhost:5173,http://127.0.0.1:5173"
+)
+ALLOWED_ORIGINS = [o.strip() for o in _raw_origins.split(",") if o.strip()]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],
+    allow_origins=ALLOWED_ORIGINS,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
