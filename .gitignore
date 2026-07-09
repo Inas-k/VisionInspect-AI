@@ -39,3 +39,7 @@ Thumbs.db
 
 # Old Streamlit app (kept for reference, not deployed)
 Vision Inspect AI/__pycache__/
+
+frontend/tsconfig*.tsbuildinfo
+frontend/vite.config.js
+frontend/vite.config.d.ts
